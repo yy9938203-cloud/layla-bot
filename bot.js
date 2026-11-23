@@ -32,8 +32,8 @@ function getHistory(chatId) {
 function addToHistory(chatId, role, content) {
     const history = getHistory(chatId);
     history.push({ role, content });
-    if (history.length > 12) {
-        history.splice(0, history.length - 12);
+    if (history.length > 14) {
+        history.splice(0, history.length - 14);
     }
 }
 
@@ -41,32 +41,49 @@ function addToHistory(chatId, role, content) {
 const LAYLA_SYSTEM_PROMPT = `أنتِ "ليلى" (Layla)، رئيسة العمليات التنفيذية (Chief of Staff & Executive Operations Director) لأسطول مكون من 14 وكيلاً ذكياً متخصصاً، تحت قيادة السيد وليد (Walid).
 
 قواعدك الصارمة في التواصل:
-1. التحدث بلغة عربية فصيحة، راقية، مباشرة ومهنية، مع القدرة الكاملة على فهم مختلف اللهجات واللغات (الإنجليزية، الفرنسية، الإسبانية).
-2. عدم استخدام عبارات الذكاء الاصطناعي المستهلكة أو الإطراء المبالغ فيه (مثل: "سؤال رائع"، "بالتأكيد"، "من دواعي سروري"). الإجابة تكون عملية ومباشرة وفي صلب الموضوع.
-3. منع التخمين نهائياً (Zero Hallucination): لا تختلقي أرقاماً، ولا بيانات طلبات غير مؤكدة. عند نقص المعلومة قولي بصراحة أن المعلومة غير متوفرة ومطلوب تحديدها.
-4. التقنيات المعتمدة لجميع المشاريع البرمجية: PHP Laravel، قواعد بيانات MySQL، واجهات Bootstrap CSS، وتطبيقات أندرويد Java (ممنوع تماماً ووردبريس أو القوالب الجاهزة).
+1. التحدث بلغة عربية فصيحة، راقية، مباشرة ومهنية، مع الفهم التام لكافة اللهجات المحلية (السعودية، الخليجية، المصرية، المغاربية) واللغات الدولية.
+2. عدم استخدام عبارات الذكاء الاصطناعي المستهلكة أو الإطراء المبالغ فيه (مثل: "سؤال رائع"، "بالتأكيد"، "من دواعي سروري"). الإجابة تكون عملية وتجارية ومباشرة.
+3. منع التخمين نهائياً (Zero Hallucination): لا تختلقي أرقاماً أو أسعاراً غير مؤكدة. عند نقص أي معلومة قولي بصراحة أن المعلومة تتطلب تأكيد المواصفات.
+4. التقنيات المعتمدة لجميع الأنظمة البرمجية: PHP Laravel، قواعد بيانات MySQL، واجهات Bootstrap CSS، وتطبيقات أندرويد Java (ممنوع تماماً ووردبريس أو القوالب الجاهزة).
 
 هيكلية أسطول الـ 14 وكيلاً تحت إشرافك:
 1. operator-agent: تخطيط العمليات، مسارات الإجراءات (Runbooks) والانضباط الميداني.
 2. challenger-agent: فريق النقد (Red Team)، اكتشاف الثغرات والمخاطر واختبار الأفكار.
-3. innovator-agent: الابتكار، ابتكار الميزات التنافسية وآليات النمو.
+3. innovator-agent: الابتكار، ابتكار الميزات التنافسية وآليات النمو التجاري.
 4. developer-agent: تطوير البرمجيات الشامل (Laravel + MySQL + Bootstrap + Android Java).
-5. qa-agent: فحص الجودة ومراجعة الأمان واختبارات الأداء.
-6. ordering-agent: إدارة دورة حياة التذاكر وحجز المقاعد وحالات الطلب.
-7. accounting-agent: الفواتير، الضرائب وبوابات الدفع (Stripe/PayPal).
-8. vendor-catalog-agent: إدارة التجار وقوائم الفعاليات ومزامنة المخزون.
-9. risk-fraud-agent: مكافحة الاحتيال وتفادي البوتات وتذاكر السوق السوداء.
-10. logistics-dispatch-agent: توليد وفحص أكواد الدخول (QR Codes) والتحقق منها.
-11. customer-support-agent: خدمة العملاء الذكية والفرز وحل النزاعات.
-12. amazon-seller-agent: متجر أمازون وإدراج المنتجات المتوافقة مع معايير المنصة.
-13. social-media-agent: سيناريوهات تيك توك الفيروسية والمحتوى التسويقي المرئي.
-14. marketing-agent: تحسين محركات البحث (SEO) وتصدر المتاجر (ASO).
+5. qa-agent: فحص الجودة ومراجعة الأمان واختبارات المنتجات.
+6. ordering-agent: إدارة دورة حياة التذاكر وحجز المقاعد وطلبات B2B.
+7. accounting-agent: الفواتير، العملات (USD, RMB, SAR)، الضرائب وبوابات الدفع (Stripe/PayPal/Wire Transfer).
+8. vendor-catalog-agent: إدارة كتالوج المصانع والمنتجات الصينية ومزامنة المخزون ومواصفات السلع (Specs).
+9. risk-fraud-agent: مكافحة الاحتيال وتأمين فحص المصانع (Factory Audit) ومطابقة العينات.
+10. logistics-dispatch-agent: سلاسل الإمداد والشحن الدولي من الصين (Air Freight, Sea Shipping DDP/FOB/CIF) والتخليص الجمركي.
+11. customer-support-agent: خدمة عملاء B2B والتجار باللغة العربية والرد على استفسارات الأسعار والمواصفات.
+12. amazon-seller-agent: متجر أمازون وتجهيز متطلبات FBA والباركود (UPC/FNSKU).
+13. social-media-agent: تسويق المنتجات وفيديوهات تيك توك وسيناريوهات استعراض جودة المنتجات.
+14. marketing-agent: تحسين محركات البحث والتسويق الرقمي B2B.
 
-عند التعامل مع أسئلة وطلبات العملاء (Customer Support Protocol):
-- إذا سأل العميل أو السيد وليد عن مشكلة تخص تذكرة أو طلب، يتدخل وكيل خدمة العملاء (customer-support-agent) بطرح الأسئلة التشخيصية الصحيحة فوراً:
-  * طلب رقم الطلب (Order ID) أو البريد الإلكتروني للشراء.
-  * نوع المشكلة بدقة (دفع، عدم وصول التذكرة، استرجاع).
-- تقديم حلول منطقية وواضحة ومنظمة في خطوات مرقمة.`;
+============================================================
+قسم استيراد البضائع من الصين وخدمة عملاء التجار (China B2B Sourcing Protocol):
+============================================================
+عندما يسألك العميل أو السيد وليد عن شراء بضائع من الصين، تفعلين هذا البروتوكول مباشرة:
+1. **الأسئلة التشخيصية الإلزامية لتحديد طلب التاجر:**
+   - نوع المنتج المطلوب ومواصفاته الفنية (المادة، المقاسات، الألوان).
+   - الكمية المستهدفة (طلب عينات Sample، أم كمية تجريبية MOQ، أم حاوية كاملة Container).
+   - التخصيص بالشعار الخاص (OEM/Branding) أم شراء علامة تجارية جاهزة للمصنع.
+   - طريقة وميناء الشحن المفضل (شحن جوي سريع Air Express، أو بحري DDP شامل الجمارك والضريبة والتوصيل للمستودع).
+
+2. **عرض معلومات المنتجات المتوفرة والمواصفات والأسعار:**
+   - عند عرض أي منتج يجب تنسيقه تجارياً بشكل واضح:
+     * 🏷️ **اسم المنتج والموديل (Model/Name)**
+     * 📋 **المواصفات الفنية الكاملة (Specifications):** المواد الخام، الأبعاد، الوزن، الشهادات المعتمدة (CE, RoHS, Saber, FCC).
+     * 💰 **جدول الأسعار حسب الكميات (Tiered Pricing بالدولار والريال):**
+       - سعر العينة (Sample): لتجربة الجودة.
+       - سعر الكميات الصغيرة (MOQ 100 - 500 قطعة).
+       - سعر الجملة والحاويات (1000+ قطعة).
+     * 🚢 **خيارات الشحن والمدة (Lead Time & Logistics):** مدة التصنيع، مدة الشحن الجوي والبحري.
+     * 📸 **الصور والفيديوهات:** إرفاق روابط وتوضيحات عن الصور التوضيحية ومقاطع الفيديو التعريفية بالمنتج وجودته وتغليفه.
+
+إذا أراد السيد وليد إضافة أو تعديل منتج جديد بمواصفاته وصوره وسعره، رحبي به واطلبي بيانات المنتج لتثبيتها في الكتالوج فوراً.`;
 
 // Call Telegram API
 async function callTelegram(method, params = {}) {
@@ -109,16 +126,15 @@ async function sendMessage(chatId, text) {
     return res;
 }
 
-// 🧠 AI LLM Query (Multi-Provider: Gemini -> Groq -> Anthropic)
+// 🧠 AI LLM Query (Using Gemini 3.5 Flash)
 async function queryAI(userText, chatId) {
     const history = getHistory(chatId);
 
-    // 1. Try Google Gemini (Fast & Free)
     if (GEMINI_API_KEY) {
         try {
             const contents = [
                 { role: 'user', parts: [{ text: LAYLA_SYSTEM_PROMPT }] },
-                { role: 'model', parts: [{ text: 'أهلاً بك يا فندم. أنا ليلى وجاهزة بكامل الجاهزية والتركيز.' }] }
+                { role: 'model', parts: [{ text: 'أهلاً بك يا فندم. أنا ليلى وجاهزة بكامل الجاهزية والتركيز في خدمة العمليات وتجارة واستيراد الصين B2B.' }] }
             ];
 
             for (const item of history) {
@@ -138,7 +154,7 @@ async function queryAI(userText, chatId) {
                     contents: contents,
                     generationConfig: {
                         temperature: 0.6,
-                        maxOutputTokens: 1200
+                        maxOutputTokens: 1500
                     }
                 })
             });
@@ -152,73 +168,6 @@ async function queryAI(userText, chatId) {
         }
     }
 
-    // 2. Try Groq (Ultra-Fast Llama 3.3 70B)
-    if (GROQ_API_KEY) {
-        try {
-            const messages = [
-                { role: 'system', content: LAYLA_SYSTEM_PROMPT }
-            ];
-            for (const item of history) {
-                messages.push({ role: item.role, content: item.content });
-            }
-            messages.push({ role: 'user', content: userText });
-
-            const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${GROQ_API_KEY}`,
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    model: 'llama-3.3-70b-versatile',
-                    messages: messages,
-                    temperature: 0.6,
-                    max_tokens: 1200
-                })
-            });
-
-            const data = await res.json();
-            if (data.choices && data.choices[0] && data.choices[0].message) {
-                return data.choices[0].message.content;
-            }
-        } catch (err) {
-            console.error('Groq error:', err.message);
-        }
-    }
-
-    // 3. Try Anthropic (Claude)
-    if (ANTHROPIC_API_KEY) {
-        try {
-            const messages = [];
-            for (const item of history) {
-                messages.push({ role: item.role, content: item.content });
-            }
-            messages.push({ role: 'user', content: userText });
-
-            const res = await fetch('https://api.anthropic.com/v1/messages', {
-                method: 'POST',
-                headers: {
-                    'x-api-key': ANTHROPIC_API_KEY,
-                    'anthropic-version': '2023-06-01',
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify({
-                    model: 'claude-3-5-haiku-20241022',
-                    system: LAYLA_SYSTEM_PROMPT,
-                    max_tokens: 1200,
-                    messages: messages
-                })
-            });
-
-            const data = await res.json();
-            if (data.content && data.content[0] && data.content[0].text) {
-                return data.content[0].text;
-            }
-        } catch (err) {
-            console.error('Anthropic error:', err.message);
-        }
-    }
-
     return null;
 }
 
@@ -229,7 +178,19 @@ async function generateLaylaReply(userText, chatId) {
 
     // Standard Quick Commands
     if (text === '/start') {
-        return `<b>أهلاً بك يا فندم 👑</b>\n\nأنا <b>ليلى</b>، رئيسة العمليات التنفيذية المشرفة على أسطول الـ 14 وكيلاً.\n\n• اكتب <code>/agents</code> للاطلاع على تشكيلة الأسطول كاملة.\n• أو اكتب لي مباشرة أي توجيه أو استفسار أو سؤال عميل للبدء فوراً!`;
+        return `<b>أهلاً بك يا فندم 👑</b>\n\nأنا <b>ليلى</b>، رئيسة العمليات التنفيذية المشرفة على أسطول الـ 14 وكيلاً ومنظومة <b>استيراد البضائع B2B من الصين</b>.\n\n• اكتب <code>/agents</code> للاطلاع على تشكيلة الأسطول كاملة.\n• اكتب <code>/china</code> للتعرف على خدمات استيراد البضائع، المواصفات والأسعار والشحن.\n• أو اكتب لي مباشرة أي استفسار أو تفاصيل منتج ترغب بإدراجه!`;
+    }
+
+    if (text === '/china' || text === 'الصين' || lower === 'china') {
+        return `<b>🇨🇳 خدمات استيراد وتوريد البضائع من الصين (B2B Sourcing):</b>\n\n` +
+            `نقوم بإدارة دورة الاستيراد بالكامل عبر أسطول الوكلاء المتخصصين:\n` +
+            `1. 🏭 <b>البحث عن المصانع وفحصها (vendor-catalog-agent):</b> اختيار المصانع المعتمدة ومطابقة المواصفات الفنية.\n` +
+            `2. 📦 <b>العينات والتخصيص (OEM/ODM):</b> طلب العينات وفحصها وتجهيز علامتك التجارية.\n` +
+            `3. 💰 <b>التفاوض على الأسعار والـ MOQ (accounting-agent):</b> الحصول على أفضل أسعار جملة حسب الكميات.\n` +
+            `4. 🛡️ <b>فحص الجودة قبل الشحن (risk-fraud-agent):</b> تقرير فحص تفصيلي للسلع والتغليف بالصور والفيديو.\n` +
+            `5. 🚢 <b>الشحن والتخليص الجمركي (logistics-dispatch-agent):</b> شحن جوي سريع أو بحري DDP شامل الجمارك حتى مستودعك.\n\n` +
+            `<b>كيف أساعدك في بضاعتك القادمة يا فندم؟</b>\n` +
+            `أرسل لي نوع المنتج المطلوب، أو صوره، أو مواصفاته وسأقوم بحساب التكلفة والشحن فوراً.`;
     }
 
     if (text === '/agents' || lower === 'agents' || text === 'الوكلاء') {
@@ -241,16 +202,16 @@ async function generateLaylaReply(userText, chatId) {
             `<b>💻 التكنولوجيا والجودة:</b>\n` +
             `4. 💻 <b>developer-agent</b>: البرمجة الشاملة (Laravel, MySQL, Bootstrap, Android)\n` +
             `5. 🔍 <b>qa-agent</b>: تدقيق الأكواد، الأمان واختبارات الجودة\n\n` +
-            `<b>🏢 العمليات والتجارة:</b>\n` +
-            `6. 🎫 <b>ordering-agent</b>: دورة حياة التذاكر وحجز المقاعد\n` +
-            `7. 💳 <b>accounting-agent</b>: الفواتير، الضرائب وبوابات الدفع\n` +
-            `8. 🏪 <b>vendor-catalog-agent</b>: إدارة التجار وقوائم المنتجات والربط المباشر\n` +
-            `9. 🛡️ <b>risk-fraud-agent</b>: مكافحة الاحتيال وتأمين العمليات\n` +
-            `10. 📲 <b>logistics-dispatch-agent</b>: أكواد الدخول المشفرة (QR) والتحقق في البوابات\n` +
-            `11. 🎧 <b>customer-support-agent</b>: خدمة العملاء والفرز وحل النزاعات\n\n` +
+            `<b>🏢 العمليات وتجارة الصين B2B:</b>\n` +
+            `6. 🎫 <b>ordering-agent</b>: دورة حياة التذاكر وطلبات استيراد الجملة\n` +
+            `7. 💳 <b>accounting-agent</b>: الفواتير، العملات وبوابات الدفع البنكي\n` +
+            `8. 🏪 <b>vendor-catalog-agent</b>: كتالوج المصانع الصينية، المواصفات والأسعار\n` +
+            `9. 🛡️ <b>risk-fraud-agent</b>: فحص جودة السلع والتأكد من مطابقة المواصفات\n` +
+            `10. 📲 <b>logistics-dispatch-agent</b>: الشحن الدولي (DDP/FOB/CIF) والتخليص الجمركي\n` +
+            `11. 🎧 <b>customer-support-agent</b>: خدمة عملاء B2B والتجار بالعربية\n\n` +
             `<b>📈 قنوات البيع والنمو:</b>\n` +
-            `12. 📦 <b>amazon-seller-agent</b>: إدارة متجر أمازون ورفع المنتجات المعتمدة\n` +
-            `13. 🎵 <b>social-media-agent</b>: سيناريوهات تيك توك والمحتوى الفيروسي\n` +
+            `12. 📦 <b>amazon-seller-agent</b>: إدارة متجر أمازون ورفع المنتجات المعتمدة FBA\n` +
+            `13. 🎵 <b>social-media-agent</b>: سيناريوهات تيك توك والمحتوى الفيروسي لاستعراض المنتجات\n` +
             `14. 📈 <b>marketing-agent</b>: تصدر محركات البحث (SEO) والمتاجر (ASO)\n\n` +
             `جاهزة لأمرك يا فندم.`;
     }
@@ -263,14 +224,14 @@ async function generateLaylaReply(userText, chatId) {
         return aiResponse;
     }
 
-    // Informative fallback if no AI key is active yet
-    return `<b>أهلاً بك يا فندم 👩‍💼</b>\n\nاستلمت رسالتك: <i>"${text}"</i>.\n\nلتفعيل عقل ليلى الذكي بالكامل للرد التفاعلي وحل استفسارات العملاء، نحتاج إلى إدخال مفتاح الذكاء الاصطناعي (Gemini أو Groq أو Anthropic) في إعدادات البيئة.\n\nبمجرد تفعيله، ستجيبك ليلى بدقة وتطرح الأسئلة التشخيصية المطلوبة فوراً.`;
+    // Informative fallback
+    return `<b>أهلاً بك يا فندم 👩‍💼</b>\n\nاستلمت رسالتك: <i>"${text}"</i>.\n\nجاري معالجة استفسارك والتحقق من مواصفات المنتج وبيانات الشحن.`;
 }
 
 // 🌐 Lightweight HTTP Health Server for Render (Keeps service active 24/7)
 const server = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
-    res.end('👑 Layla Executive Cloud Bot is running 24/7 on Render!\nAll 14 agents online.');
+    res.end('👑 Layla Executive Cloud Bot is running 24/7 on Render!\nAll 14 agents online.\nChina B2B Sourcing Active.');
 });
 
 server.listen(PORT, () => {
@@ -280,7 +241,7 @@ server.listen(PORT, () => {
 // Stable Short-Polling Loop
 let offset = 0;
 async function pollLoop() {
-    console.log('🤖 Layla Multilingual 14-Agent Cloud Bot is active with VIP Security & AI Engine...');
+    console.log('🤖 Layla Multilingual 14-Agent Cloud Bot is active with VIP Security & China B2B Engine...');
 
     while (true) {
         try {
